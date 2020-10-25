@@ -17,3 +17,11 @@ app.get('/users', (req, res) => {
       res.send(rows);
     });
   });
+
+  app.get('/category', (req, res) => {
+    connection.query('SELECT * from category', (error, rows) => {
+      if (error) throw error;
+      console.log('Category info is: ', rows);
+      res.send(rows);
+    });
+  });
