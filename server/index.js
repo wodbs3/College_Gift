@@ -21,7 +21,15 @@ app.get('/users', (req, res) => {
   app.get('/category', (req, res) => {
     connection.query('SELECT * from category', (error, rows) => {
       if (error) throw error;
-      console.log('Category info is: ', rows);
+      console.log('User info is: ', rows);
+      res.send(rows);
+    });
+  });
+
+  app.get('/brand', (req, res) => {
+    connection.query('SELECT * from brand', (error, rows) => {
+      if (error) throw error;
+      console.log('Brand info is: ', rows);
       res.send(rows);
     });
   });
